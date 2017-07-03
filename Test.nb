@@ -1,0 +1,158 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4333,        150]
+NotebookOptionsPosition[      3612,        118]
+NotebookOutlinePosition[      3968,        134]
+CellTagsIndexPosition[      3925,        131]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Test Waves", "Section",
+ CellChangeTimes->{{3.635413750473461*^9, 3.63541375452936*^9}},
+ CellID->1520657281],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.635413674293211*^9, 3.635413682306045*^9}},
+ CellID->1251440857],
+
+Cell[BoxData["\<\"/Users/leophys/Documents/coding/ParamEqualizer\"\>"], \
+"Output",
+ CellChangeTimes->{3.707997146038637*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cleanWave", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"\"\<./MatheProg_dry.wav\>\"", ",", "\"\<Sound\>\""}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.635413702421193*^9, 3.635413724869996*^9}, {
+  3.645814596879241*^9, 3.645814598846796*^9}, {3.70799717673382*^9, 
+  3.707997178063636*^9}, {3.708000425561652*^9, 3.7080004594790983`*^9}},
+ CellID->1393804935],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"distWave", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"\"\<./MatheProg_wet.wav\>\"", ",", "\"\<Sound\>\""}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{
+  3.635413732707168*^9, {3.645814600494893*^9, 3.645814602046692*^9}, {
+   3.707997158117786*^9, 3.707997159501184*^9}, {3.708000470255928*^9, 
+   3.708000474486145*^9}},
+ CellID->672816631],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Dry", "[", "L", "]"}], "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"First", "@", 
+      RowBox[{"cleanWave", "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Dry", "[", "R", "]"}], "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"First", "@", 
+      RowBox[{"cleanWave", "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "[", 
+    RowBox[{"[", "2", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Wet", "[", "L", "]"}], "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"First", "@", 
+      RowBox[{"distWave", "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Wet", "[", "R", "]"}], "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"First", "@", 
+      RowBox[{"distWave", "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "[", 
+    RowBox[{"[", "2", "]"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.633536263929985*^9, 3.633536390680231*^9}, {
+  3.633536545853908*^9, 3.633536567705494*^9}, {3.633536723306656*^9, 
+  3.6335367263800087`*^9}, {3.633536791476117*^9, 3.633536792721676*^9}, {
+  3.6458146038472424`*^9, 3.645814606076847*^9}, {3.707997185355439*^9, 
+  3.707997187514309*^9}},
+ CellID->1004328402]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Test the Equalizer", "Section",
+ CellChangeTimes->{{3.707997110428932*^9, 3.707997117999157*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ParamEqualizer", "[", 
+  RowBox[{"Dry", "[", "L", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.708000484225442*^9, 3.7080004971542807`*^9}}]
+}, Open  ]]
+},
+WindowSize->{1141, 974},
+WindowMargins->{{150, Automatic}, {26, Automatic}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 115, 2, 64, "Section",
+ CellID->1520657281],
+Cell[CellGroupData[{
+Cell[720, 28, 191, 4, 32, "Input",
+ CellID->1251440857],
+Cell[914, 34, 125, 2, 32, "Output"]
+}, Open  ]],
+Cell[1054, 39, 407, 9, 32, "Input",
+ CellID->1393804935],
+Cell[1464, 50, 385, 10, 32, "Input",
+ CellID->672816631],
+Cell[1852, 62, 1436, 42, 96, "Input",
+ CellID->1004328402]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3325, 109, 103, 1, 64, "Section"],
+Cell[3431, 112, 165, 3, 32, "Input"]
+}, Open  ]]
+}
+]
+*)
+
